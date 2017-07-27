@@ -1,3 +1,4 @@
+#Image of the php-apache container that will hold the symfony application
 FROM ubuntu:16.04
 
 # Set environment variables.
@@ -23,4 +24,4 @@ ADD ctest_apps /app
 # Define working directory.
 WORKDIR /app
 
-EXPOSE 8000
+EXPOSE 80

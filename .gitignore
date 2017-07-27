@@ -27,5 +27,8 @@
 # Build data
 /ctest_apps/build/
 
+#mysql data
+/mysql_data/
+
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~

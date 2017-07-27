@@ -18,10 +18,12 @@ class DefaultController extends Controller
 
         $entityManager = $em = $this->getDoctrine()->getManager();
         try {
-        $entityManager->getConnection()->connect();
+            $entityManager->getConnection()->connect();
         } catch (\Exception $e) {
             echo $e->getMessage();
+            exit();
         }
+        echo '<h1>Connexion succeed to database </h1>'; 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,

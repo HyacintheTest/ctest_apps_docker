@@ -1,30 +1,32 @@
-web:
-  build: .
-  command: php -S 0.0.0.0:8000 -t /app
+#Symfony app container
+app:
+  build: .    #Build the docker file
+  command: php -S 0.0.0.0:80 -t /app/web
   links:
     - database
   ports:
-    - "8000:8000"
+    - 3000:80
   volumes:
     - ./ctest_apps:/app
+#database container
 database:
   image: mysql
   ports:
-    - "3307:3306"
+    - 5000:3306
   environment:
-    MYSQL_ROOT_PASSWORD: 123456
-    MYSQL_PASSWORD: 123456
-    MYSQL_DATABASE: myapp
+    MYSQL_ROOT_PASSWORD: siteV3_2017
+    MYSQL_DATABASE: ctest_database
   volumes:
-    - /mysql:/var/lib/mysql
+    - ./mysql_data:/var/lib/mysql
+#phpmyadmin container
 test_phpmyadmin:
   image: phpmyadmin/phpmyadmin
   ports:
-    - 8080:80
+    - 4000:80
   links:
     - database
   environment:
     - PMA_HOST=database
     - PMA_PORT=3306
     - PMA_USER=root
-    - PMA_PASSWORD=123456
+    - PMA_PASSWORD=siteV3_2017
