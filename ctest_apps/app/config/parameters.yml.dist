@@ -6,7 +6,7 @@ parameters:
     database_port: 3306
     database_name: ctest_database
     database_user: root
-    database_password: siteV3_2017
+    database_password: erTYuiop_2017
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 

@@ -14,7 +14,7 @@ database:
   ports:
     - 5000:3306
   environment:
-    MYSQL_ROOT_PASSWORD: siteV3_2017
+    MYSQL_ROOT_PASSWORD: erTYuiop_2017
     MYSQL_DATABASE: ctest_database
   volumes:
     - ./mysql_data:/var/lib/mysql
@@ -29,4 +29,4 @@ test_phpmyadmin:
     - PMA_HOST=database
     - PMA_PORT=3306
     - PMA_USER=root
-    - PMA_PASSWORD=siteV3_2017
+    - PMA_PASSWORD=erTYuiop_2017
